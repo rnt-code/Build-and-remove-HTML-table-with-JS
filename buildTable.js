@@ -1,6 +1,7 @@
 function buildtable() {
 
     const tabla = document.createElement("table");
+    tabla.id = 'tabla'
     const thead = document.createElement("thead");
     const tbody = document.createElement("tbody");
     const div = document.getElementById("datos");
@@ -9,25 +10,20 @@ function buildtable() {
     tabla.appendChild(thead);
     tabla.appendChild(tbody);
     
-    const rowh = thead.innerHTML += `
-                <th>id shift</th>
+    const rowh = document.createElement('tr')
+            rowh.innerHTML += `
+                <th>id_shift</th>
                 <th>shift</th>
-                <th>start time</th>
-                <th>end time</th>
+                <th>start_time</th>
+                <th>end_time</th>
                 `;
-                tbody.appendChild(rowh)
+                thead.appendChild(rowh)
 
     fetch('getShifts.php')
         .then(response => response.json())
         .then(data => {
             console.log(data)
             let datos = document.getElementById('datos');
-
-            /*
-            console.log(data[0].id_shift);
-            console.log(data[1].id_shift);
-            console.log(data[2].id_shift);
-            */
 
             for(let i = 0; i < data.length; i++) {
     
