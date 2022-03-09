@@ -1,0 +1,1 @@
+http://localhost/Horas-a-JSON-File/setShift.php?'h0'='12:00'&'h1'='15:00'&'h2'='16:00'&'h3'='18:00'&'h4'='21:00'&'h5'='00:40'
