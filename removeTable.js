@@ -3,7 +3,7 @@ function removetable(){
 	if (!tabla){
 		console.log("no hay tabla para eliminar");
 	} else {
-		padre = tabla.parentNode;
-		padre.removeChild(tabla);
+		div = tabla.parentNode;
+		div.removeChild(tabla);
 	}
 }
