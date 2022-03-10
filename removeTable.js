@@ -1,7 +1,7 @@
-function removetable(id){
-	tabla = document.getElementById(id);	
+function removetable(){
+	tabla = document.getElementById("tabla");	
 	if (!tabla){
-		alert("no hay tabla para eliminar");
+		console.log("no hay tabla para eliminar");
 	} else {
 		padre = tabla.parentNode;
 		padre.removeChild(tabla);
