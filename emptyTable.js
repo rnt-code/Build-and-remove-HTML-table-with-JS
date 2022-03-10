@@ -6,7 +6,7 @@ function emptytable() {
         td = document.querySelectorAll('td')
         
         for(let i=0; i < td.length; i++) {
-            td[i].innerText = "1"
+            td[i].innerText = ""
         }
     }
 }
