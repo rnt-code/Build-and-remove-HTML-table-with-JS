@@ -1,0 +1,7 @@
+#tabla, th, td {
+    border: 1px solid;
+    color: rgb(0, 17, 255);
+}
+#tabla {
+    border-collapse: collapse;
+}
