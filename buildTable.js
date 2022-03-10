@@ -44,48 +44,31 @@ function buildtable() {
         };
         /*fin contrucción tabla*/
 
+        //llenar tabla
         fetch('getShifts.php')
             .then(response => response.json())
             .then(data => {
                 console.log('data= ', data)
-                console.log('data= ', data[1].length)
+                console.log('data[1]= ', data[1])
                 
-                //console.log(Object.keys(data[1]).length);
-                //console.log(data.length);
+                console.log(data.length, ' objetos');
+                console.log(Object.keys(data[1]).length, ' atributos del objeto');
+               
 
                 td = document.querySelectorAll('td');
-                //console.log(td);
-                let j = -4;
-                let l = 0;
-                for() {
-                    console.log('object= ', 0.id_shift);
-                    //console.log(Object.keys(object).length)
-                    /**
-                    j = j + 4;
-                    console.log('j= ',j);
-                    for(let i = j; i < (Object.keys(object)).length + j; i++) {
-                        l++;
-                        console.log('interno= ',i);
+                console.log('12 los elemento <td>: ',td);
+                let i = 0;
+                for(let j = 0; j < 3; j++) {
+                    console.log('j === ', j)                   
+                    
+                        i = 4*j;
+                        console.log('i = ', 4*j, '/ j = ', j);
                         
-                        td[i].innerHTML = data[l].id_shift;
-                        td[i+1].innerHTML = data[l].shift;
-                        td[i+2].innerHTML = data[l].start_time;
-                        td[i+3].innerHTML = data[l].end_time;
-                        */
-
-                        /*
-                        const row = document.createElement('tr')
-                        row.innerHTML += `
-                        <td>${data[i].id_shift}</td>
-                        <td>${data[i].shift}</td>
-                        <td>${data[i].start_time}</td>
-                        <td>${data[i].end_time}</td>
-                        `;
-                        tbody.appendChild(row)
-                        
-                            
-                    };
-                    */
+                        td[i].innerHTML = data[j].id_shift
+                        td[i+1].innerHTML = data[j].shift
+                        td[i+2].innerHTML = data[j].start_time
+                        td[i+3].innerHTML = data[j].end_time      
+                    
                 }
             })
             .catch(e => console.log(e))
