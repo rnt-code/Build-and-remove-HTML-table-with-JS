@@ -7,7 +7,7 @@ function buildtable() {
                 empty++;
             }
         }
-    console.log(empty);
+    //console.log(empty);
     const establa = document.querySelector("#tabla")
     //console.log(establa);
     if(establa === null) {
@@ -32,12 +32,32 @@ function buildtable() {
                     `;
                     thead.appendChild(rowh)
 
+        for(let i = 0; i < 3; i++) {
+            
+            const row = document.createElement('tr')
+            row.innerHTML += `
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                `;
+            tbody.appendChild(row)
+                
+        };
+
         fetch('getShifts.php')
             .then(response => response.json())
             .then(data => {
-                //console.log(data)
+                console.log(data.length)
+                console.log(Object.keys(data[1]));
+                console.log(Object.keys(data[1]).length);
                 for(let i = 0; i < data.length; i++) {
-        
+                    console.log(data[i].id_shift);
+                    console.log(data[i].shift);
+                    console.log(data[i].start_time);
+                    console.log(data[i].end_time);
+
+                    /*
                     const row = document.createElement('tr')
                     row.innerHTML += `
                     <td>${data[i].id_shift}</td>
@@ -46,6 +66,7 @@ function buildtable() {
                     <td>${data[i].end_time}</td>
                     `;
                     tbody.appendChild(row)
+                    */
                         
                 };
             })
