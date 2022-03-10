@@ -1,9 +1,17 @@
 function buildtable() {
 
-    
+    td = document.querySelectorAll('td')
+        let empty = 0;
+        for(let i=0; i < td.length; i++) {
+            if(td[i].innerText === "") {
+                empty++;
+            }
+        }
+    console.log(empty);
     const establa = document.querySelector("#tabla")
     //console.log(establa);
     if(establa === null) {
+        
         
         const tabla = document.createElement("table");
         tabla.id = 'tabla'
