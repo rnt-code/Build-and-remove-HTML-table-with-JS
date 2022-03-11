@@ -1,10 +1,8 @@
 function fullfiltable() {
 
     const establa = document.querySelector("#tabla")
-    
     if(establa != null) {
         //console.log(establa);
-
         const td = document.querySelectorAll('td')
         let counter = 0;
         for(let i=0; i < td.length; i++) {

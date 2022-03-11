@@ -1,8 +1,7 @@
 function buildtable() {
 
     const establa = document.querySelector("#tabla")
-    if(establa === null) {
-        
+    if(establa === null) {    
         /**construcción de la tabla*/
         const tabla = document.createElement("table");
         tabla.id = 'tabla'
