@@ -11,16 +11,20 @@ function emptytable() {
             }
         }
         if(counter === 0) {
-            console.log('la tabla NO está vacía, borramos los datos');
+            const messages = document.getElementById('messages');
+            messages.innerHTML = 'La tabla NO estaba vacía, borramos los datos'
+            
             for(let i=0; i < td.length; i++) {
                 td[i].innerText = ""
             }
         }
         else {
-            console.log('tabla vacía, no hacemos nada');
+            const messages = document.getElementById('messages');
+            messages.innerHTML = 'Tabla vacía, no hacemos nada'
         }
     }
     else {
-        console.log('no hay tabla ni datos, no hacemos nada');
+        const messages = document.getElementById('messages');
+        messages.innerHTML = 'No hay tabla ni datos, no hacemos nada'
     }
 }

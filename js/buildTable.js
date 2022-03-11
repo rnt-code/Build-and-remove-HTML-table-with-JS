@@ -2,6 +2,8 @@ function buildtable() {
 
     const establa = document.querySelector("#tabla")
     if(establa === null) {    
+        const messages = document.getElementById('messages');
+        messages.innerHTML = 'No hay una tabla, construimos una'
         /**construcción de la tabla*/
         const tabla = document.createElement("table");
         tabla.id = 'tabla'
@@ -35,6 +37,7 @@ function buildtable() {
         /*fin contrucción tabla*/
     }
     else {
-        console.log('Ya hay una tabla, no hacemos nada');
+        const messages = document.getElementById('messages');
+        messages.innerHTML = 'Ya hay una tabla, no hacemos nada'
     }
 }

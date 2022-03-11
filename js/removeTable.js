@@ -2,11 +2,11 @@ function removetable(){
 
 	establa = document.getElementById("tabla");	
 	if (!establa){
-
-		console.log("no hay tabla para remover, no hacemos nada");
+		const messages = document.getElementById('messages');
+        messages.innerHTML = 'No hay tabla para remover, no hacemos nada'
 	} else {
-
-		console.log('hay tabla y la removemos');
+		const messages = document.getElementById('messages');
+        messages.innerHTML = 'Existe una tabla y la removemos'
 		div = establa.parentNode;
 		div.removeChild(establa);
 	}

@@ -11,7 +11,9 @@ function fullfiltable() {
             }
         }
         if(counter > 0) {
-        console.log('hay tabla vacía, llenamos la tabla');
+        const messages = document.getElementById('messages');
+        messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
+
         fetch('getShifts.php')
             .then(response => response.json())
             .then(data => {
@@ -28,10 +30,13 @@ function fullfiltable() {
             .catch(e => console.log(e))
         }
         else {
-            console.log('hay tabla llena, no hacemos nada');
+            const messages = document.getElementById('messages');
+            messages.innerHTML = 'Hay una tabla llena, no hacemos nada'
+
         }
     }
     else {
-        console.log('no hay tabla para llenar, no hacemos nada');
+        const messages = document.getElementById('messages');
+        messages.innerHTML = 'No hay tabla para llenar, no hacemos nada'
     }
 }
