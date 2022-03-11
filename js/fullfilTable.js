@@ -16,6 +16,9 @@ function fullfiltable() {
             .then(data => {
                 const messages = document.getElementById('messages');
                 messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
+                let {shifts, errors} = data;
+
+                
                 let i = 0;
                 for(let j = 0; j < data.length; j++) {                 
                         i = 4*j;  
