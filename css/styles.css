@@ -13,6 +13,13 @@
     position: fixed;
     bottom: 0;
     left: 5px;
-    color:brown;
+    color:rgb(82, 82, 82);
+}
+
+#errormessages {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    color:rgb(255, 0, 0);
 }
 

@@ -11,13 +11,11 @@ function fullfiltable() {
             }
         }
         if(counter > 0) {
-        const messages = document.getElementById('messages');
-        messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
-
         fetch('getShifts.php')
             .then(response => response.json())
             .then(data => {
-                
+                const messages = document.getElementById('messages');
+                messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
                 let i = 0;
                 for(let j = 0; j < data.length; j++) {                 
                         i = 4*j;  
@@ -27,7 +25,17 @@ function fullfiltable() {
                         td[i+3].innerHTML = data[j].end_time      
                 }
             })
-            .catch(e => console.log(e))
+            .catch(e => {
+                console.error(e)
+                const messages = document.getElementById('messages');
+                const errormessages = document.getElementById('errormessages');
+                
+                messages.innerHTML = "Error"
+                errormessages.innerHTML = 'Falla al trer datos, no se pudo obtener los recursos de origen...'
+                setTimeout(() => {
+                    errormessages.innerHTML = ''
+                }, 5000);
+            })
         }
         else {
             const messages = document.getElementById('messages');
