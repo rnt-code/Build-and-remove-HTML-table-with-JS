@@ -1,1 +1,34 @@
 http://localhost/Horas-a-JSON-File/setShift.php?'h0'='12:00'&'h1'='15:00'&'h2'='16:00'&'h3'='18:00'&'h4'='21:00'&'h5'='00:40'
+
+
+
+Some irrelvant notes:
+
+//http://localhost/Horas-a-JSON-File/getShifts.php
+
+//http://localhost/Horas-a-JSON-File/conexion.php
+
+        /*
+        if (file_exists("conexion.php")) {
+
+        }
+        else {
+            echo "blabla";
+        }
+        */
+<?php
+try{
+        $server = "localhost";
+        $usuario = "root";
+        $clave = "";
+        $base = "time_scheme";
+        $conexion = mysqli_connect($server,$usuario,$clave,$base);
+        mysqli_set_charset($conexion,'utf8'); 
+    }
+    catch(Exception $e){
+        throw new Exception('Error de conexion');
+    }
+
+    Handle ALL errors in PHP
+    https://stackoverflow.com/questions/27238473/how-can-i-catch-all-errors-in-php/27238474#27238474
+?>
