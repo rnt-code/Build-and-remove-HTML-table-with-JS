@@ -12,23 +12,41 @@ function fullfiltable() {
         }
         let errors = false;
         if(counter > 0) {
+        //la tabla está vacía
         fetch('getShifts.php')
             .then(response => response.json())
             .then(shifts => {
-                const messages = document.getElementById('messages');
-                messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
-                let {data, errors} = shifts; //desestructuración de objetos
+                
+                let {data, errors, message} = shifts; //desestructuración de objetos
+                
+                /*
                 console.log(shifts);
                 console.log(data);
                 console.log(errors)
-                
-                let i = 0;
-                for(let j = 0; j < data.length; j++) {                 
-                        i = 4*j;  
-                        td[i].innerHTML = data[j].id_shift
-                        td[i+1].innerHTML = data[j].shift
-                        td[i+2].innerHTML = data[j].start_time
-                        td[i+3].innerHTML = data[j].end_time      
+                console.log(message);
+                */
+
+                if(!errors) {
+                    const messages = document.getElementById('messages');
+                    messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
+                    let i = 0;
+                    for(let j = 0; j < data.length; j++) {                 
+                            i = 4*j;  
+                            td[i].innerHTML = data[j].id_shift
+                            td[i+1].innerHTML = data[j].shift
+                            td[i+2].innerHTML = data[j].start_time
+                            td[i+3].innerHTML = data[j].end_time      
+                    }
+                }
+                else {
+                    const messages = document.getElementById('messages');
+                    const errormessages = document.getElementById('errormessages');
+                    
+                    messages.innerHTML = "Error"
+                    errormessages.innerHTML = message
+                    setTimeout(() => {
+                        errormessages.innerHTML = ''
+                    }, 5000);
                 }
             })
             .catch(e => {

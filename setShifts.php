@@ -18,10 +18,6 @@
         echo"h5=".$h5."<br>";
 
         $res0 = mysqli_query($conexion, "UPDATE shifts SET start_time = '$h0', end_time = '$h1' WHERE id_shift = 0");
-        if(!$res0) {
-            echo json_encode("****Error description: ".$mysqli_error);
-            echo json_encode(error_get_last());
-        }
         $res1 = mysqli_query($conexion, "UPDATE shifts SET start_time = '$h2', end_time = '$h3' WHERE id_shift = 1");
         $res2 = mysqli_query($conexion, "UPDATE shifts SET start_time = '$h4', end_time = '$h5' WHERE id_shift = 2");
 
