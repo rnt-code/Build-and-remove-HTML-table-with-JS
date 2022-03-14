@@ -4,9 +4,9 @@ http://localhost/Horas-a-JSON-File/setShift.php?'h0'='12:00'&'h1'='15:00'&'h2'='
 
 Some irrelvant notes:
 
-//http://localhost/Horas-a-JSON-File/getShifts.php
+http://localhost/Build-and-remove-HTML-table-with-JS/getShifts.php
 
-//http://localhost/Horas-a-JSON-File/conexion.php
+http://localhost/Build-and-remove-HTML-table-with-JS/conexion.php
 
         /*
         if (file_exists("conexion.php")) {
@@ -32,3 +32,16 @@ try{
     Handle ALL errors in PHP
     https://stackoverflow.com/questions/27238473/how-can-i-catch-all-errors-in-php/27238474#27238474
 ?>
+
+The following PHP code catches all Exceptions in a try catch statement.
+try {
+   $resource = $client->getResources([
+      $resource_id
+   ]);
+} catch (\Throwable $e) {
+   //throw $e;
+   $resource = '';
+}
+catch (\Throwable $e) will catch all exceptions and allow you to handle the Exception rather than adding multiple catch statements targeted at catching specific Exceptions.
+https://blog.wplauncher.com/php-try-catch-not-catching-all-exceptions/
+ 

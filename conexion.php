@@ -9,7 +9,7 @@
             $conexion = mysqli_connect($server,$usuario,$clave,$base);
             mysqli_set_charset($conexion,'utf8'); 
         }
-        catch(Exception $e){
+        catch(\Throwable $e){
             throw new Exception('Error de conexion');
         }
 ?>

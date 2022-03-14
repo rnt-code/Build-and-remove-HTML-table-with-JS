@@ -10,14 +10,17 @@ function fullfiltable() {
                 counter++;
             }
         }
+        let errors = false;
         if(counter > 0) {
         fetch('getShifts.php')
             .then(response => response.json())
-            .then(data => {
+            .then(shifts => {
                 const messages = document.getElementById('messages');
                 messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
-                //let {shifts, errors} = data;
-
+                let {data, errors} = shifts; //desestructuración de objetos
+                console.log(shifts);
+                console.log(data);
+                console.log(errors)
                 
                 let i = 0;
                 for(let j = 0; j < data.length; j++) {                 
@@ -34,7 +37,7 @@ function fullfiltable() {
                 const errormessages = document.getElementById('errormessages');
                 
                 messages.innerHTML = "Error"
-                errormessages.innerHTML = 'Falla al trer datos, no se pudo obtener los recursos de origen...'
+                errormessages.innerHTML = 'Falla al traer datos, no se pudo obtener los recursos de origen...'
                 setTimeout(() => {
                     errormessages.innerHTML = ''
                 }, 5000);
