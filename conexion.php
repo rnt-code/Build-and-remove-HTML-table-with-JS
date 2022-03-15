@@ -1,6 +1,6 @@
 <?php 
     
-        $server = "localhost";
+        $server = "loc_alhost";
         $usuario = "root";
         $clave = "";
         $base = "time_scheme";
@@ -10,7 +10,8 @@
             mysqli_set_charset($conexion,'utf8'); 
         }
         catch(\Throwable $e){
-            throw new Exception('Error de conexion');
+            echo 'Error'.$e->getMessage();
+            //throw new Exception('Error de conexion');
         }
 ?>
         
