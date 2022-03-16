@@ -1,6 +1,6 @@
 <?php 
     
-        $server = "loc_alhost";
+        $server = "localhost";
         $usuario = "root";
         $clave = "";
         $base = "time_scheme";
