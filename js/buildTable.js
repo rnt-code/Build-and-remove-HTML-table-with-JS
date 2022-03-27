@@ -16,13 +16,13 @@ function buildtable() {
         tabla.appendChild(tbody);
         
         const rowh = document.createElement('tr')
-                rowh.innerHTML += `
-                    <th>id_shift</th>
-                    <th>shift</th>
-                    <th>start_time</th>
-                    <th>end_time</th>
-                    `;
-                    thead.appendChild(rowh)
+        rowh.innerHTML += `
+            <th>id_shift</th>
+            <th>shift</th>
+            <th>start_time</th>
+            <th>end_time</th>
+            `;
+        thead.appendChild(rowh)
 
         for(let i = 0; i < 3; i++) {  
             const row = document.createElement('tr')
