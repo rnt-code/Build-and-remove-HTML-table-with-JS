@@ -4,6 +4,7 @@ function fullfiltable() {
     if(establa != null) {
         //console.log(establa);
         const td = document.querySelectorAll('td')
+        console.log(td.length);
         let counter = 0;
         for(let i=0; i < td.length; i++) {
             if(td[i].innerText === "") {
@@ -29,14 +30,33 @@ function fullfiltable() {
                 if(!errors) {
                     const messages = document.getElementById('messages');
                     messages.innerHTML = 'Hay una tabla vacía, llenamos la tabla'
+                    len = data.length;
+                    console.log(data);
+                    console.log('length = ',len);
                     let i = 0;
-                    for(let j = 0; j < data.length; j++) {                 
-                            i = 4*j;  
-                            td[i].innerHTML = data[j].id_shift
-                            td[i+1].innerHTML = data[j].shift
-                            td[i+2].innerHTML = data[j].start_time
-                            td[i+3].innerHTML = data[j].end_time      
+                    //orden descendente
+                    for(let j = (len-1); j >= 0 ; j--) { 
+                        console.log(data[j]);
+                        i = 8 - 4*j;  //el 8 = data[x].length * (data.length - 1)
+                        td[i].innerHTML = data[j].id_shift
+                        td[i+1].innerHTML = data[j].shift
+                        td[i+2].innerHTML = data[j].start_time
+                        td[i+3].innerHTML = data[j].end_time  
                     }
+
+                    /*
+                    //orde ascendente
+                    let i = 0;
+                    for(let j = 0; j < len ; j++) { 
+                        i = 4*j; 
+                        //el 4 de la expresión 'i = 4*j' son la cantidad de columnas de la lista, o lo que los mismo 4 = data[x].length.
+                        //El máximo valor de i será 8
+                        td[i].innerHTML = data[j].id_shift
+                        td[i+1].innerHTML = data[j].shift
+                        td[i+2].innerHTML = data[j].start_time
+                        td[i+3].innerHTML = data[j].end_time  
+                    }
+                    */
                 }
                 else {
                     const messages = document.getElementById('messages');
